@@ -1,0 +1,14 @@
+{
+    "name": "Java Swing with VNC",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "features": {
+      "ghcr.io/devcontainers/features/desktop-lite:1": {}
+    },
+    "postCreateCommand": "sudo chmod +x /usr/local/share/desktop-lite/startup.sh && /usr/local/share/desktop-lite/startup.sh",
+    "forwardPorts": [6080],
+    "customizations": {
+      "vscode": {
+        "extensions": ["vscjava.vscode-java-pack"]
+      }
+    }
+  }
