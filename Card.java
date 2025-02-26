@@ -10,6 +10,7 @@ public class Card {
     private Image image;
     private String rank;
     private String suit;
+    private int value;
     private boolean isVisible;
     private boolean isFaceUp;
 
@@ -40,6 +41,11 @@ public class Card {
             filename = "k";
         }
 
+        if (rank != 1)
+            this.value = rank - 1;
+        else
+            this.value = 13;
+
         this.suit = suit;
 
         filename += this.suit.substring(0, 1).toLowerCase() + ".png";
@@ -50,6 +56,10 @@ public class Card {
         this.isVisible = false;
         this.xPosition = rank * 50;
         this.yPosition = 0;
+    }
+
+    public int getValue() {
+        return this.value;
     }
 
     /**
